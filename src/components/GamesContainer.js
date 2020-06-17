@@ -1,40 +1,38 @@
-import React from 'react';
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux ';
-import fetchGames from '../redux/utilities/containers/AllGames/AllGamesActions';
+//import React, { useEffect } from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-function GameContainer({ fetchGames, gamesData }) {
-  useEffect(() => {
-    fetchGames()
-  }, [])
+import fetchGames from '../redux/thunks';
+import GamesView from './views'
 
-  return gamesData.loading ? (
-    <h2> Loading </h2>
-  ) : gamesData.error ? (
-    <h2> {gamesData.error} </h2>
-  ) : (
-    <div className="games-grid">
-      <h2> Trending Games </h2>
-        <div>
-          {
-            gamesData && gamesData.games && gamesData.games.map(game => <p> {game.name}</p>)
-          }
-        </div>
-    </div>
-  )
+//Smart container
+class GamesContainer extends Component {
+    componentDidMount(){
+      this.props.fetchGames();
+    }
+    render() {
+      return (
+        <GamesView
+          allGames = {this.props.allGames}
+        />
+      );
+    }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    gamesData: state.games
+    allGames: state.allGames
   }
 }
 
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    fetchGames: () dispatch(fetchGames())
-  }
-}
+    fetchGames: () => dispatch(fetchGames())
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(GamesContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  )(GamesContainer);
