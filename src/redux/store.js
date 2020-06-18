@@ -1,10 +1,15 @@
-//The store takes in the root-reducer containing all the reducers used
+//Constructing our redux store
 
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import allGamesReducers from '../utilities/containers/AllGames'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
-const myStore = createStore(allGamesReducers, applyMiddleware(logger, thunk));
+import gameReducer from './utilities/AllGames'
+
+//The store
+//const logger = createLogger({ collapsed: true});
+const middleware = composeWithDevTools(applyMiddleware(thunk, logger));
+const myStore = createStore(gameReducer, middleware);
 
 export default myStore;

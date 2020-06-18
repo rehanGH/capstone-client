@@ -1,38 +1,39 @@
-//import React, { useEffect } from 'react';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import fetchGames from '../redux/thunks';
-import GamesView from './views'
+import { fetchGamesThunk } from '../redux/utilities/AllGames';
+import GamesView from './views/gamesView';
 
 //Smart container
 class GamesContainer extends Component {
-    componentDidMount(){
-      this.props.fetchGames();
+    componentDidMount() {
+        this.props.fetchAllGames();
+        console.log("componentDidMount");
     }
+
     render() {
-      return (
-        <GamesView
-          allGames = {this.props.allGames}
-        />
-      );
+        return ( <
+            GamesView allGames = { this.props.allGames }
+            />
+        );
     }
 }
 
+// Map state to props
 const mapStateToProps = (state) => {
-  return {
-    allGames: state.allGames
-  }
+    return {
+        allGames: state.allGames
+    }
 }
 
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchGames: () => dispatch(fetchGames())
-  };
+    return {
+        fetchAllGames: () => dispatch(fetchGamesThunk())
+    };
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-  )(GamesContainer);
+    mapStateToProps,
+    mapDispatchToProps
+)(GamesContainer);
