@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
+
+
 export class Header extends Component {
+  constructor(){
+    super();
+    this.state = {
+      isLoggedIn: false,
+    }
+  }
+
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">

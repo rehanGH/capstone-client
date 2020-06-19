@@ -12,6 +12,7 @@ import {
   HomeContainer,
   RegisterContainer,
 } from "./components/containers";
+
 export class App extends Component {
   render() {
     return (

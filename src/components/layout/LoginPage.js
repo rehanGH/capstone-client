@@ -3,6 +3,9 @@ import "./style/login.css";
 import { BrowserRouter, Link } from "react-router-dom";
 
 export class LoginPage extends Component {
+  googleResponse = (response) => {
+    console.log(response);
+  };
   render() {
     return (
       <div className="loginPage">
@@ -50,6 +53,9 @@ export class LoginPage extends Component {
                     />
                   </div>
                 </form>
+              </div>
+              <div>
+                <a href="http://localhost:3001/auth/google">Log In With Google</a>
               </div>
               <div className="card-footer">
                 <div className="d-flex justify-content-center links">

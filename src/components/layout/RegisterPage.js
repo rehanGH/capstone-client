@@ -83,6 +83,9 @@ export class RegisterPage extends Component {
                   </div>
                 </form>
               </div>
+              <div>
+                <a href="http://localhost:3001/auth/google">Sign Up With Google</a>
+              </div>
               <div className="card-footer">
                 <div className="d-flex justify-content-center links">
                   Already have an account?<Link to="/login">Sign In</Link>
