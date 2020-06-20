@@ -3,15 +3,11 @@ import { Header } from "./components/layout";
 //import RoutesContainer from "./components/routes/RoutesContainer";
 import "./App.css";
 import { Provider } from "react-redux";
-import GamesView from "./redux/utilities/GamesView";
-import myStore from "./redux/store";
-import GamesContainer from "./redux/utilities/GamesContainer";
+import store from "./store";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {
-  LoginContainer,
-  HomeContainer,
-  RegisterContainer,
-} from "./components/containers";
+import {HomeContainer, GamesContainer} from "./components/containers";
+import Routes from "./components/containers/routes"
+
 
 export class App extends Component {
   render() {
@@ -19,17 +15,13 @@ export class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          {/* <header className="app-header">
-            <RoutesContainer />
-          </header> */}
-
-          <Switch>
-            <Route path="/register" component={RegisterContainer} />
-            <Route path="/login" component={LoginContainer} />
-            <Route path="/" component={HomeContainer} />
-          </Switch>
+          <div>
+            <Routes />
+          </div>
+        )
+      }
         </div>
-        <Provider store={myStore}>
+        <Provider store={store}>
           <div className="App">
             <GamesContainer />
           </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import GamesView from "./GamesView";
+import GamesView from "../../components/layout/GamesView"
 
 const initialState = [];
 
@@ -65,27 +65,27 @@ export const fetchGamesThunk = () => {
     }
   };
 };
-export const fetchCoversThunk = () => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios({
-        url:
-          "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/covers",
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "user-key": "5d814ccfdde668d67c178b8cd959feff",
-        },
-        data:
-          "fields alpha_channel,animated,checksum,game,height,image_id,url,width;",
-      });
-      console.log({ data });
-      dispatch(fetchCover(data));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-};
+// export const fetchCoversThunk = () => {
+//   return async (dispatch) => {
+//     try {
+//       const { data } = await axios({
+//         url:
+//           "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/covers",
+//         method: "POST",
+//         headers: {
+//           Accept: "application/json",
+//           "user-key": "5d814ccfdde668d67c178b8cd959feff",
+//         },
+//         data:
+//           "fields alpha_channel,animated,checksum,game,height,image_id,url,width;",
+//       });
+//       console.log({ data });
+//       dispatch(fetchCover(data));
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+// };
 
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export class Header extends Component {
@@ -41,8 +41,8 @@ export class Header extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/register" className="nav-link">
-                Register
+              <Link to="/signup" className="nav-link">
+                Signup
               </Link>
             </li>
           </ul>
