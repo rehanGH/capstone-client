@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchGameThunk } from "./AllGames";
+import { fetchCoversThunk } from "./AllGames";
 
 class GamesView extends Component {
   constructor(props) {
@@ -35,6 +36,20 @@ class GamesView extends Component {
         >
           GAMES
         </h1>
+        <div className="all-games row ">
+          {this.props.allCovers.map((cover) => {
+            return (
+              <div className="col" style={{ marginTop: "100px" }}>
+                <img
+                  id="game-poster"
+                  class="poster"
+                  src={`//images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`}
+                  alt=""
+                ></img>
+              </div>
+            );
+          })}
+        </div>
         <form
           onSubmit={this.onSubmit}
           class="form-inline my-2 my-lg-0 d-flex justify-content-center"
@@ -52,18 +67,12 @@ class GamesView extends Component {
         </form>
         <div className="all-games row ">
           {this.props.allGames.map((game) => {
-            if (game.rating > 60) {
-              return (
-                <div
-                  key={game.id}
-                  className="col"
-                  style={{ marginTop: "100px" }}
-                >
-                  <h4>{game.name}</h4>
-                  <img src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png" />
-                </div>
-              );
-            }
+            return (
+              <div key={game.id} className="col" style={{ marginTop: "100px" }}>
+                <h4>{game.name}</h4>
+                <img id="game-poster" class="poster" alt=""></img>
+              </div>
+            );
           })}
         </div>
       </div>
@@ -75,12 +84,14 @@ const mapStateToProps = (state) => {
   console.log({ state });
   return {
     allGames: state,
+    allCovers: state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchGame: (input) => dispatch(fetchGameThunk(input)),
+    fetchCover: () => dispatch(fetchCoversThunk()),
   };
 };
 
