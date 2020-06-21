@@ -9,17 +9,11 @@ import GamesView from "./GamesView";
 class GamesContainer extends Component {
   componentDidMount() {
     this.props.fetchAllGames();
-    this.props.fetchCovers();
     console.log("componentDidMount");
   }
 
   render() {
-    return (
-      <GamesView
-        allGames={this.props.allGames}
-        allCovers={this.props.allCovers}
-      />
-    );
+    return <GamesView allGames={this.props.allGames} />;
   }
 }
 
@@ -27,14 +21,12 @@ class GamesContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     allGames: state.allGames,
-    allCovers: state.allCovers,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllGames: () => dispatch(fetchGamesThunk()),
-    fetchCovers: () => dispatch(fetchCoversThunk()),
   };
 };
 
