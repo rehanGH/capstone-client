@@ -3,29 +3,26 @@ import { Header } from "./components/layout";
 //import RoutesContainer from "./components/routes/RoutesContainer";
 import "./App.css";
 import { Provider } from "react-redux";
-import store from "./store";
+import myStore from "./store";
+import GamesContainer from "./components/containers/GamesContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {HomeContainer, GamesContainer} from "./components/containers";
-import Routes from "./components/containers/routes"
-
+import {HomeContainer} from "./components/containers";
+import {Signup, Login} from "./components/auth"
 
 export class App extends Component {
   render() {
     return (
+
       <BrowserRouter>
+        <Provider store={myStore}>
         <div className="App">
           <Header />
-          <div>
-            <Routes />
-          </div>
-        )
-      }
-      <HomeContainer/>
-      </div>
-        {/* </div> */}
-        <Provider store={store}>
-          <div className="App">
+          <Switch>
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/" component={HomeContainer} />
             <GamesContainer />
+            </Switch>
           </div>
         </Provider>
       </BrowserRouter>

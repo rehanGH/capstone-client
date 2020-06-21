@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchGamesThunk } from "../../store/utilities/AllGames";
-import GamesView from "../layout/GamesView";
+
+import { fetchGamesThunk } from "../../store";
+import { GamesView } from "../layout";
 
 //Smart container
 class GamesContainer extends Component {
@@ -11,7 +12,7 @@ class GamesContainer extends Component {
   }
 
   render() {
-    return <GamesView allGames={this.props.allGames} />;
+    return <GamesView allGames={this.props.allGames}/>
   }
 }
 

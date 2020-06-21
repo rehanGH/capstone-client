@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup} from '../auth'
+import UserHome from "./user-home"
 import {me} from '../../store'
 
 /**
@@ -21,6 +22,14 @@ class Routes extends Component {
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+
+        {isLoggedIn && (
+          <Switch>
+            {/* Routes placed here are only available after logging in */}
+            {/* UserHome component should show for all routes after logging in */}
+            <Route path="*" component={UserHome} />
+          </Switch>
+        )}
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>

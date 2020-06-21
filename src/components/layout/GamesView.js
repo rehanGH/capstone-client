@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchGameThunk } from "../../store/utilities/AllGames"
-// import { fetchCoversThunk } from "../../store/utilities/AllGames"
+import { fetchGameThunk } from "../../store"
 
 class GamesView extends Component {
   constructor(props) {
@@ -24,57 +23,63 @@ class GamesView extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ backgroundColor: "#191919", color: "white" }}>
         <h1
-          className="d-inline-flex p-2 bd-highlight"
+          className=" p-2 bd-highlight"
           style={{
-            borderRadius: "8px",
-            background: "green",
-            border: "1px solid green",
+            background: "#1e272c",
+            border: "1px solid black",
             color: "white",
           }}
         >
           GAMES
         </h1>
-        {/* <div className="all-games row ">
-          {this.props.allCovers.map((cover) => {
-            return (
-              <div className="col" style={{ marginTop: "100px" }}>
-                <img
-                  id="game-poster"
-                  class="poster"
-                  src={`//images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`}
-                  alt=""
-                ></img>
-              </div>
-            );
-          })}
-        </div> */}
         <form
           onSubmit={this.onSubmit}
-          class="form-inline my-2 my-lg-0 d-flex justify-content-center"
+          className="form-inline my-2 my-lg-0 d-flex justify-content-center"
         >
           <input
             onChange={this.onChange}
-            class="form-control mr-sm-2"
+            className="form-control mr-sm-2"
             type="search"
             placeholder="Search for a game here!"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button
+            className="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+          >
             Search
           </button>
         </form>
-        {/* <div className="all-games row ">
+        <div
+          className="all-games row "
+          style={{ display: "flex", justifyContent: "space-evenely" }}
+        >
           {this.props.allGames.map((game) => {
             return (
               <div key={game.id} className="col" style={{ marginTop: "100px" }}>
-                <h4>{game.name}</h4>
-                <img id="game-poster" class="poster" alt=""></img>
+                <h4 style={{ paddingBottom: "50px" }}>{game.name}</h4>
+                <img
+                  style={{
+                    borderRadius: "12px",
+                    width: "20em",
+                    height: "20em",
+                  }}
+                  id="game-poster"
+                  className="poster"
+                  src={
+                    game.cover && game.cover.url
+                      ? game.cover.url.replace("t_thumb", "t_720p")
+                      : // ? game.cover.url.replace("t_thumb", "720_p")
+                        "https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
+                  }
+                  alt="Game Cover"
+                />
               </div>
             );
           })}
-        </div> */}
+        </div>
       </div>
     );
   }
@@ -84,14 +89,12 @@ const mapStateToProps = (state) => {
   console.log({ state });
   return {
     allGames: state,
-    allCovers: state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchGame: (input) => dispatch(fetchGameThunk(input)),
-    // fetchCover: () => dispatch(fetchCoversThunk()),
   };
 };
 

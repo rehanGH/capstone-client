@@ -5,7 +5,10 @@ export class Carousal extends Component {
   render() {
     return (
       <div>
-        <div className="container" style={{ paddingBottom: "60px" }}>
+        <div
+          className="container"
+          style={{ paddingBottom: "60px", paddingTop: "50px" }}
+        >
           <div className="row blog">
             <div className="col-md-12">
               <div
@@ -40,7 +43,7 @@ export class Carousal extends Component {
                       <div className="col-md-3">
                         <a href="#">
                           <img
-                            src="http://placehold.it/250x250"
+                            src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                             alt="Image"
                             style={{ maxWidth: "100%" }}
                           />
@@ -49,7 +52,7 @@ export class Carousal extends Component {
                       <div className="col-md-3">
                         <a href="#">
                           <img
-                            src="http://placehold.it/250x250"
+                            src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                             alt="Image"
                             style={{ maxWidth: "100%" }}
                           />
@@ -58,7 +61,7 @@ export class Carousal extends Component {
                       <div className="col-md-3">
                         <a href="#">
                           <img
-                            src="http://placehold.it/250x250"
+                            src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                             alt="Image"
                             style={{ maxWidth: "100%" }}
                           />
@@ -72,7 +75,7 @@ export class Carousal extends Component {
                       <div className="col-md-3">
                         <a href="#">
                           <img
-                            src="http://placehold.it/250x250"
+                            src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                             alt="Image"
                             style={{ maxWidth: "100%" }}
                           />
@@ -81,7 +84,7 @@ export class Carousal extends Component {
                       <div className="col-md-3">
                         <a href="#">
                           <img
-                            src="http://placehold.it/250x250"
+                            src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                             alt="Image"
                             style={{ maxWidth: "100%" }}
                           />
@@ -90,7 +93,7 @@ export class Carousal extends Component {
                       <div className="col-md-3">
                         <a href="#">
                           <img
-                            src="http://placehold.it/250x250"
+                            src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                             alt="Image"
                             style={{ maxWidth: "100%" }}
                           />
@@ -99,7 +102,7 @@ export class Carousal extends Component {
                       <div className="col-md-3">
                         <a href="#">
                           <img
-                            src="http://placehold.it/250x250"
+                            src="https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                             alt="Image"
                             style={{ maxWidth: "100%" }}
                           />
