@@ -3,7 +3,7 @@ import { BrowserRouter, Link } from "react-router-dom";
 export class Header extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="#">
           GameINFO
         </a>

@@ -24,13 +24,12 @@ class GamesView extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ backgroundColor: "#191919", color: "white" }}>
         <h1
-          className="d-inline-flex p-2 bd-highlight"
+          className=" p-2 bd-highlight"
           style={{
-            borderRadius: "8px",
-            background: "green",
-            border: "1px solid green",
+            background: "#1e272c",
+            border: "1px solid black",
             color: "white",
           }}
         >
@@ -54,18 +53,25 @@ class GamesView extends Component {
             Search
           </button>
         </form>
-        <div className="all-games row ">
+        <div
+          className="all-games row "
+          style={{ display: "flex", justifyContent: "space-evenely" }}
+        >
           {this.props.allGames.map((game) => {
             return (
               <div key={game.id} className="col" style={{ marginTop: "100px" }}>
-                <h4>{game.name}</h4>
+                <h4 style={{ paddingBottom: "50px" }}>{game.name}</h4>
                 <img
-                  style={{ width: "5em", height: "5em" }}
+                  style={{
+                    borderRadius: "12px",
+                    width: "20em",
+                    height: "20em",
+                  }}
                   id="game-poster"
                   className="poster"
                   src={
                     game.cover && game.cover.url
-                      ? game.cover.url
+                      ? game.cover.url.replace("t_thumb", "t_720p")
                       : // ? game.cover.url.replace("t_thumb", "720_p")
                         "https://games.vodacom.co.za/assets/rich/placeholder_games_cover.png"
                   }
