@@ -35,6 +35,8 @@ export class Header extends Component {
               <Link to="/signup" className="nav-link">
                 Signup
               </Link>
+            </li>
+            <li>
               <Link to="/profile" className="nav-link">
                 Profile
               </Link>
