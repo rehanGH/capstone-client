@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Header } from "./components/layout";
+import { Header, ProfileView} from "./components/layout";
 //import RoutesContainer from "./components/routes/RoutesContainer";
 import "./App.css";
 import { Provider } from "react-redux";
-import myStore from "./store";
+import store from "./store";
 import GamesContainer from "./components/containers/GamesContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import {HomeContainer} from "./components/containers";
@@ -14,12 +14,13 @@ export class App extends Component {
     return (
 
       <BrowserRouter>
-        <Provider store={myStore}>
+        <Provider store={store}>
         <div className="App">
           <Header />
           <Switch>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
+            <Route path="/profile" component={ProfileView} />
             <Route path="/" component={HomeContainer} />
             <GamesContainer />
             </Switch>
