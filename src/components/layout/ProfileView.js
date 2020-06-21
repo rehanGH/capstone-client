@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {me, updateUserThunk} from '../../store'
+import "../layout/style/profileview.css"
 
 class profileview extends Component {
   constructor() {
@@ -35,9 +36,7 @@ class profileview extends Component {
         email: this.state.email,
         password: this.state.password
       }
-      // thunk to update user info, make separate obj
       await this.props.updateUser(user)
-      // success redirect to success
       this.setState({
         editInfoSuccess: true
       })
@@ -48,12 +47,12 @@ class profileview extends Component {
 
   render() {
     if (this.state.editInfoSuccess) {
-      return <p>Your password was changed successfully.</p>
+      return <p className="profile-text">Your password was changed successfully.</p>
     } else {
       return (
         <div>
           <form className="nes-field">
-            <label htmlFor="name_field">Email:</label>
+            <label htmlFor="name_field" className="profile-text">Email:</label>
             <input
               type="email"
               name="email"
@@ -61,50 +60,39 @@ class profileview extends Component {
               defaultValue={this.props.user.email}
               onChange={e => this.handleChange(e)}
               required
-              className="nes-input input"
+              className="profile-input"
             />
-            <label>New Password:</label>
+            <label className="profile-text">New Password:</label>
             <input
               type="password"
               name="password"
               onChange={e => this.handleChange(e)}
               required
-              className="nes-input input"
+              className="profile-input"
             />
 
-            <label>Re-Enter New Password:</label>
+            <label className="profile-text">Re-Enter New Password:</label>
             <input
               type="password"
               name="reenterPassword"
               onChange={e => this.handleChange(e)}
               required
-              className="nes-input input"
+              className="profile-input"
             />
             <br />
             <button
               type="submit"
               onClick={e => this.handleClick(e)}
-              className="nes-btn is-success"
+              className="is-success"
             >
               Update Password
             </button>
             <br />
             <br />
             {this.state.passwordMismatch ? (
-              <div>The passwords do not match. Try again.</div>
+              <div className="profile-text">The passwords do not match. Try again.</div>
             ) : null}
           </form>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </div>
       )
     }

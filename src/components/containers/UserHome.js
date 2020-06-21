@@ -4,9 +4,6 @@ import PropTypes from 'prop-types'
 import "../layout/style/userhome.css"
 import {me} from '../../store'
 
-/**
- * COMPONENT
- */
 export class UserHome extends Component {
   componentDidMount() {
     this.props.loadInitialData()
@@ -49,9 +46,6 @@ export class UserHome extends Component {
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = state => {
   return {
     firstName: state.user.firstName,
@@ -69,9 +63,6 @@ const mapDispatch = dispatch => {
 
 export default connect(mapState, mapDispatch)(UserHome)
 
-/**
- * PROP TYPES
- */
 UserHome.propTypes = {
   firstName: PropTypes.string,
   email: PropTypes.string

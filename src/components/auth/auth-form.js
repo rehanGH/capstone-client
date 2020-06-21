@@ -3,9 +3,8 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../../store'
 
-/**
- * COMPONENT
- */
+
+
 const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
@@ -65,9 +64,6 @@ const mapDispatch = dispatch => {
 export const Login = connect(mapLogin, mapDispatch)(AuthForm)
 export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
 
-/**
- * PROP TYPES
- */
 AuthForm.propTypes = {
   name: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
