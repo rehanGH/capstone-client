@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchGameThunk } from "./AllGames";
-import { fetchCoversThunk } from "./AllGames";
+import { fetchCoversThunk } from "../redux/utilities/AllGames";
 
 class GamesView extends Component {
   constructor(props) {

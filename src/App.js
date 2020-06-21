@@ -3,15 +3,16 @@ import { Header } from "./components/layout";
 //import RoutesContainer from "./components/routes/RoutesContainer";
 import "./App.css";
 import { Provider } from "react-redux";
-import GamesView from "./redux/utilities/GamesView";
+import GamesView from "./components/views/GamesView";
 import myStore from "./redux/store";
-import GamesContainer from "./redux/utilities/GamesContainer";
+import GamesContainer from "./components/containers/GamesContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import {
   LoginContainer,
   HomeContainer,
   RegisterContainer,
 } from "./components/containers";
+
 export class App extends Component {
   render() {
     return (

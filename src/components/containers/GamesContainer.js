@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { fetchGamesThunk } from "./AllGames";
-import { fetchCoversThunk } from "./AllGames";
-import GamesView from "./GamesView";
+import { fetchGamesThunk } from "../redux/utilities/AllGames";
+import { fetchCoversThunk } from "..//redux/utilities/AllGames";
+import GamesView from "../views/GamesView";
 
 //Smart container
 class GamesContainer extends Component {
