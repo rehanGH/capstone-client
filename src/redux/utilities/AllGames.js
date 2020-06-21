@@ -1,5 +1,5 @@
 import axios from 'axios';
-import GamesView from "../components/views/GamesView";
+import GamesView from "../../components/views/GamesView";
 
 const initialState = [];
 
