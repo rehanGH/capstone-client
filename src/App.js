@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Header, ProfileView} from "./components/layout";
-//import RoutesContainer from "./components/routes/RoutesContainer";
 import "./App.css";
 import { Provider } from "react-redux";
 import store from "./store";
-import GamesContainer from "./components/containers/GamesContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {HomeContainer} from "./components/containers";
+import {HomeContainer, GamesContainer, UserHome} from "./components/containers";
 import {Signup, Login} from "./components/auth"
 
 export class App extends Component {
@@ -17,6 +15,7 @@ export class App extends Component {
         <Provider store={store}>
         <div className="App">
           <Header />
+          <UserHome />
           <Switch>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
