@@ -20,7 +20,9 @@ export class App extends Component {
           </div>
         )
       }
-        </div>
+      <HomeContainer/>
+      </div>
+        {/* </div> */}
         <Provider store={store}>
           <div className="App">
             <GamesContainer />
