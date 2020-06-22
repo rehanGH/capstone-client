@@ -45,18 +45,6 @@ const RegisterandLoginFormView = props => {
       <form onSubmit={handleSignUp} name={name} >
         <h3>Sign Up </h3>
         <div>
-          <label >
-            <small>First Name</small>
-          </label>
-          <input name="firstName" type="text" onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="email">
-            <small>Last Name</small>
-          </label>
-          <input name="lastName" type="text" onChange={handleChange} />
-        </div>
-        <div>
           <label htmlFor="email" >
             <small>Email</small>
           </label>

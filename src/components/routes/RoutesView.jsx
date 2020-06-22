@@ -16,7 +16,7 @@ const RoutesView = () => {
       <Switch>
       <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <Route path="/profile" component={ProfileView} />
+        {/* <Route path="/profile" component={ProfileView} /> */}
         <Route path="/" component={HomeContainer} />
         <GamesContainer />
         </Switch>

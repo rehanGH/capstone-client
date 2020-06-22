@@ -9,8 +9,6 @@ class RegisterandLoginFormContainer extends Component {
   constructor() {
     super();
     this.state = {
-      lastName:"",
-      firstName:"",
       email: "",
       password: ""
     }

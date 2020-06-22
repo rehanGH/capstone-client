@@ -36,11 +36,6 @@ export class Header extends Component {
                 Signup
               </Link>
             </li>
-            <li>
-              <Link to="/profile" className="nav-link">
-                Profile
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>
