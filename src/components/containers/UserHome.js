@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import "../layout/style/userhome.css"
 import {me} from '../../store'
+import "../layout/style/userhome.css"
 
 export class UserHome extends Component {
   componentDidMount() {
@@ -15,13 +16,13 @@ export class UserHome extends Component {
     return (
       <div>
         {email ? (
-          <h4 className="hfour-tag">
+          <h4>
             Welcome back,{' '}
             {firstName ? firstName : email.slice(0, email.indexOf('@'))}.
           </h4>
         ) : (
           <div>
-            <h4 className="hfour-tag">
+            <h4>
               Hello, guest.
               <br />
               <br />
@@ -33,14 +34,10 @@ export class UserHome extends Component {
         <br />
 
         <progress
-          className="nes-progress is-success"
           value="0"
           max="100"
           style={{height: '0.5vh'}}
         />
-
-        <br />
-        <br />
       </div>
     )
   }

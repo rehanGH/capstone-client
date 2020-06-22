@@ -12,14 +12,15 @@ class GamesContainer extends Component {
   }
 
   render() {
-    return <GamesView allGames={this.props.allGames}/>
+    return <GamesView allGames={this.props.allGames} />;
   }
 }
 
 // Map state to props
 const mapStateToProps = (state) => {
+  console.log({ state });
   return {
-    allGames: state.allGames,
+    allGames: state.gameReducer.allGames,
   };
 };
 

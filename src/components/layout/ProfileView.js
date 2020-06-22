@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {me, updateUserThunk} from '../../store'
 import "../layout/style/profileview.css"
+import "./style/profileview.css"
 
 class profileview extends Component {
   constructor() {
@@ -51,7 +52,7 @@ class profileview extends Component {
     } else {
       return (
         <div>
-          <form className="nes-field">
+          <form>
             <label htmlFor="name_field" className="profile-text">Email:</label>
             <input
               type="email"
