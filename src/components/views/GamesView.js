@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 import { fetchGameThunk } from "../../redux/utilities/AllGames";
 import { fetchCoversThunk } from "../../redux/utilities/AllGames";
 
@@ -77,6 +78,10 @@ class GamesView extends Component {
                   }
                   alt="Game Cover"
                 />
+                //Link to a single game view
+                <Link to="/${game.name}">
+                  <h5> Learn more </h5>
+                </Link>
               </div>
             );
           })}

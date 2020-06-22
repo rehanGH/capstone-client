@@ -1,5 +1,5 @@
 import axios from 'axios';
-import GamesView from "../../components/views/GamesView";
+//import GamesView from "../../components/views/GamesView";
 
 const initialState = [];
 
@@ -58,6 +58,8 @@ export const fetchGamesThunk = () => {
     }
   };
 };
+
+//Reducer
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_GAMES:
