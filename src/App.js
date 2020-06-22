@@ -1,38 +1,15 @@
 import React, { Component } from "react";
-import { Header } from "./components/layout";
-//import RoutesContainer from "./components/routes/RoutesContainer";
 import "./App.css";
-import { Provider } from "react-redux";
-import myStore from "./store/index";
-import GamesContainer from "./store/utilities/GamesContainer";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {
-  LoginContainer,
-  HomeContainer,
-  RegisterContainer,
-} from "./components/containers";
+import RoutesContainer from "./components/routes/RoutesContainer";
+
 export class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Header />
-          {/* <header className="app-header">
-            <RoutesContainer />
-          </header> */}
-
-          <Switch>
-            <Route path="/register" component={RegisterContainer} />
-            <Route path="/login" component={LoginContainer} />
-            <Route path="/" component={HomeContainer} />
-          </Switch>
-        </div>
-        <Provider store={myStore}>
-          <div className="App">
-            <GamesContainer />
-          </div>
-        </Provider>
-      </BrowserRouter>
+      <div className="app">
+        <header className="app-header">
+          <RoutesContainer/>
+        </header>
+      </div>
     );
   }
 }
