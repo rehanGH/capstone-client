@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchGameThunk } from "./AllGames";
-import { fetchCoversThunk } from "./AllGames";
 
 class GamesView extends Component {
   constructor(props) {
@@ -21,10 +20,15 @@ class GamesView extends Component {
     e.preventDefault();
     this.props.fetchGame(this.state.input);
   }
-
   render() {
     return (
-      <div style={{ backgroundColor: "#191919", color: "white" }}>
+      <div
+        style={{
+          backgroundColor: "#191919",
+          color: "white",
+          overflowX: "hidden",
+        }}
+      >
         <h1
           className=" p-2 bd-highlight"
           style={{
@@ -89,7 +93,7 @@ class GamesView extends Component {
 const mapStateToProps = (state) => {
   console.log({ state });
   return {
-    allGames: state,
+    allGames: state.gameReducer.allGames,
   };
 };
 

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { fetchGamesThunk } from "./AllGames";
-import { fetchCoversThunk } from "./AllGames";
 import GamesView from "./GamesView";
 
 //Smart container
@@ -19,8 +18,9 @@ class GamesContainer extends Component {
 
 // Map state to props
 const mapStateToProps = (state) => {
+  console.log({ state });
   return {
-    allGames: state.allGames,
+    allGames: state.gameReducer.allGames,
   };
 };
 

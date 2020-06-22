@@ -3,9 +3,8 @@ import { Header } from "./components/layout";
 //import RoutesContainer from "./components/routes/RoutesContainer";
 import "./App.css";
 import { Provider } from "react-redux";
-import GamesView from "./redux/utilities/GamesView";
-import myStore from "./redux/store";
-import GamesContainer from "./redux/utilities/GamesContainer";
+import myStore from "./store/index";
+import GamesContainer from "./store/utilities/GamesContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import {
   LoginContainer,

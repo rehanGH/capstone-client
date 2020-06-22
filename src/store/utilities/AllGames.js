@@ -1,11 +1,11 @@
 import axios from "axios";
-import GamesView from "./GamesView";
 
-const initialState = [];
+const initialState = {
+  allGames: [],
+};
 
 const FETCH_GAMES = "FETCH_GAMES";
 const SEARCH_GAMES = "SEARCH_GAMES";
-const FETCH_GAME = "FETCH_GAME";
 
 //Action Creator
 const fetchAllGames = (games) => {
@@ -49,7 +49,7 @@ export const fetchGamesThunk = () => {
           "user-key": "5d814ccfdde668d67c178b8cd959feff",
         },
         data:
-          "limit: 20; fields category,cover.url,first_release_date,genres,name,platforms,popularity,rating,rating_count,release_dates,screenshots,storyline,summary,tags,total_rating,total_rating_count,url;",
+          "limit: 20; fields category,cover.url,first_release_date,genres,name,platforms,popularity,rating,rating_count,release_dates.date,screenshots,storyline,summary,tags,total_rating,total_rating_count,url;",
       });
       console.log({ data });
       dispatch(fetchAllGames(data));
@@ -61,9 +61,13 @@ export const fetchGamesThunk = () => {
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_GAMES:
-      return action.games;
+      return {
+        allGames: action.games,
+      };
     case SEARCH_GAMES:
-      return action.game;
+      return {
+        allGames: action.game,
+      };
     default:
       return state;
   }
