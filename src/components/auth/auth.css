@@ -1,0 +1,57 @@
+label,
+big {
+  width: 100px;
+  display: inline-block;
+  font-size: 20px;
+  font-family: Monospace;
+}
+
+.email,
+.password {
+  margin: 10px;
+}
+
+button {
+  margin-top: 5px;
+  padding: 3px 10px;
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #8847e6;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+  font-size: 20px;
+}
+
+button:hover,
+button:focus {
+  background-color: #7946e8;
+}
+
+input {
+  color: black;
+}
+
+.form,
+.page {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  margin-left: 46.75%;
+  margin-bottom: 10px;
+}
+
+.signup {
+  padding-top: 10px;
+}
+
+.text-info{
+  color: white;
+  font-size: 24px; 
+}
